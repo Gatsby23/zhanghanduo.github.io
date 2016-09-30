@@ -18,13 +18,10 @@ avatar: https://cloud.githubusercontent.com/assets/8006682/18716354/15e36422-804
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
-# <<<<<<< HEAD
   email:zhang.handuo@live.com
   facebook:zhang.handuo
-=======
   email: zhang.handuo@live.com
   facebook: zhang.handuo
->>>>>>> 813dce1b90a1355332ed516f630e5e850d293e62
   flickr:
   github: christlurker
   instagram:
@@ -42,7 +39,6 @@ footer-links:
 disqus:
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-<<<<<<< HEAD
 google_analytics:UA-84370615-1
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
@@ -54,7 +50,6 @@ google_analytics: UA-84370615-1
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
 url: http://christlurker.github.io/
->>>>>>> 813dce1b90a1355332ed516f630e5e850d293e62
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)
