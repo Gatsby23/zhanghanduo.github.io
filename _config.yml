@@ -17,7 +17,7 @@ avatar: https://cloud.githubusercontent.com/assets/8006682/18716354/15e36422-804
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
-  facebook:zhang.handuo
+  facebook: zhang.handuo
   email: zhang.handuo@live.com
   facebook: zhang.handuo
   flickr:
@@ -37,12 +37,6 @@ footer-links:
 disqus:
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics:UA-84370615-1
-
-# Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
-# Used for Sitemap.xml and your RSS feed
-url:http://christlurker.github.io/
-=======
 google_analytics: UA-84370615-1
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
