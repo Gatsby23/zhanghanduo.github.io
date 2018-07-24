@@ -11,30 +11,28 @@ weight = 5
 [interests]
   interests = [
     "Artificial Intelligence",
-    "Computational Linguistics",
-    "Information Retrieval"
+    "3D Robot Vision",
+    "Camera based Localization and Navigation"
   ]
 
 # List your qualifications (such as academic degrees).
 [[education.courses]]
-  course = "PhD in Artificial Intelligence"
-  institution = "Stanford University"
-  year = 2012
+  course = "PhD in Robot Vision"
+  institution = "Nanyang Technological University"
+  year = 2016
 
 [[education.courses]]
   course = "MEng in Artificial Intelligence"
   institution = "Massachusetts Institute of Technology"
-  year = 2009
+  year = 2011
 
 [[education.courses]]
-  course = "BSc in Artificial Intelligence"
-  institution = "Massachusetts Institute of Technology"
-  year = 2008
+  course = "BSc in Automation"
+  institution = "Northeastern University"
+  year = 2007
  
 +++
 
 # Biography
 
-Lena Smith is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate. 
+ Zhang Handuo is currently a Ph.D student in Nanyang Technological University. His research interest is Robot Vision and Visual SLAM. Currently he is involved in a stereo vison based project for unmanned ground vehicle.
