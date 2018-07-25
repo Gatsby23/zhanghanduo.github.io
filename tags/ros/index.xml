@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ROS on 张 瀚 铎 Zhang Handuo</title>
+    <link>https://zhanghanduo.github.io/tags/ros/</link>
+    <description>Recent content in ROS on 张 瀚 铎 Zhang Handuo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Thu, 03 May 2018 10:07:29 +0800</lastBuildDate>
+    
+	<atom:link href="https://zhanghanduo.github.io/tags/ros/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CLion for catkin projects</title>
+      <link>https://zhanghanduo.github.io/post/clion/</link>
+      <pubDate>Thu, 03 May 2018 10:07:29 +0800</pubDate>
+      
+      <guid>https://zhanghanduo.github.io/post/clion/</guid>
+      <description>Why use CLion?  Better indexing and intelligence hints for C++ than Eclipse and QtCreator-desktop. Free for students. Also integrate PyCharm already. Good Git integration (although I am still used to commandline git). I really like the code inspection clang-tidy function which makes the code style more modern.  Initial set-up Highly recommend you to add source &amp;lt;CATKIN_WORKSPACE_DIR&amp;gt;/devel/setup.bash to the end of ~/.bashrc or ~/.zshrc (Depends you use bash or zsh).</description>
+    </item>
+    
+  </channel>
+</rss>

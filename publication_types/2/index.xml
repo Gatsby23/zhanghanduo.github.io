@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2 on 张 瀚 铎 Zhang Handuo</title>
+    <link>https://zhanghanduo.github.io/publication_types/2/</link>
+    <description>Recent content in 2 on 张 瀚 铎 Zhang Handuo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Fri, 24 Feb 2017 19:36:47 +0800</lastBuildDate>
+    
+	<atom:link href="https://zhanghanduo.github.io/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Object co-segmentation via weakly supervised data fusion</title>
+      <link>https://zhanghanduo.github.io/publication/object-co-segmentation-via-weakly-supervised-data-fusion/</link>
+      <pubDate>Fri, 24 Feb 2017 19:36:47 +0800</pubDate>
+      
+      <guid>https://zhanghanduo.github.io/publication/object-co-segmentation-via-weakly-supervised-data-fusion/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
