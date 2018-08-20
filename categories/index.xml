@@ -11,5 +11,23 @@
 	<atom:link href="https://zhanghanduo.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Network architecture</title>
+      <link>https://zhanghanduo.github.io/categories/network-architecture/</link>
+      <pubDate>Wed, 02 May 2018 10:16:18 +0800</pubDate>
+      
+      <guid>https://zhanghanduo.github.io/categories/network-architecture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Object Detection</title>
+      <link>https://zhanghanduo.github.io/categories/object-detection/</link>
+      <pubDate>Mon, 20 Aug 2018 16:21:12 +0800</pubDate>
+      
+      <guid>https://zhanghanduo.github.io/categories/object-detection/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

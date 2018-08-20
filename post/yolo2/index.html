@@ -17,11 +17,12 @@
       
     
   
-  <meta name="description" content="Today I didn&rsquo;t have the mood to continue my work on map merging of different cameras. So I read the paper from DeepMind of Learned Deformation Stability in Convolutional Neural Networks recommended by Wang Chen.
-1. Convolution Operation Convolution operation is typically denoted with an asterisk1: $$ s(t)=(x*w)(t) $$ In Convolutional network terminology, the x is referred to as the input, and the w as the kernel. The output is sometimes referred to as the feature map.">
+  <meta name="description" content="YOLO has higher localization errors and the recall (measure how good to locate all objects) is lower, compared to SSD. YOLOv2 is the second version of the YOLO with the objective of improving the accuracy significantly while making it faster.
+The backbone network architecture of YOLO v2 is as follows: 1. Accuracy Improvements Batch Normalization Also removes the need of dropouts. mAP increases by 2%.
+High-resolution Classifier To generate predictions with shape of $7\times 7 \times 125$, we replace the final fully connected layers with a $3\times 3$ convolution layer each outputting 1024 output channels.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://zhanghanduo.github.io/post/pooling/">
+  <link rel="alternate" hreflang="en-us" href="https://zhanghanduo.github.io/post/yolo2/">
 
   
 
@@ -72,27 +73,28 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://zhanghanduo.github.io/post/pooling/">
+  <link rel="canonical" href="https://zhanghanduo.github.io/post/yolo2/">
 
   <meta property="twitter:card" content="summary_large_image">
   
   <meta property="og:site_name" content="张 瀚 铎 Zhang Handuo">
-  <meta property="og:url" content="https://zhanghanduo.github.io/post/pooling/">
-  <meta property="og:title" content="Pooling Layer in CNN (1) | 张 瀚 铎 Zhang Handuo">
-  <meta property="og:description" content="Today I didn&rsquo;t have the mood to continue my work on map merging of different cameras. So I read the paper from DeepMind of Learned Deformation Stability in Convolutional Neural Networks recommended by Wang Chen.
-1. Convolution Operation Convolution operation is typically denoted with an asterisk1: $$ s(t)=(x*w)(t) $$ In Convolutional network terminology, the x is referred to as the input, and the w as the kernel. The output is sometimes referred to as the feature map."><meta property="og:image" content="https://zhanghanduo.github.io/img/pooling_layer.png">
+  <meta property="og:url" content="https://zhanghanduo.github.io/post/yolo2/">
+  <meta property="og:title" content="You only look once (YOLO) -- (2) | 张 瀚 铎 Zhang Handuo">
+  <meta property="og:description" content="YOLO has higher localization errors and the recall (measure how good to locate all objects) is lower, compared to SSD. YOLOv2 is the second version of the YOLO with the objective of improving the accuracy significantly while making it faster.
+The backbone network architecture of YOLO v2 is as follows: 1. Accuracy Improvements Batch Normalization Also removes the need of dropouts. mAP increases by 2%.
+High-resolution Classifier To generate predictions with shape of $7\times 7 \times 125$, we replace the final fully connected layers with a $3\times 3$ convolution layer each outputting 1024 output channels."><meta property="og:image" content="https://zhanghanduo.github.io/img/yolo/intro_yolo_cars.jpeg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2018-05-02T10:16:18&#43;08:00">
+  <meta property="article:published_time" content="2018-08-20T16:21:12&#43;08:00">
   
-  <meta property="article:modified_time" content="2018-05-02T10:16:18&#43;08:00">
-  
-
+  <meta property="article:modified_time" content="2018-08-20T16:21:12&#43;08:00">
   
 
   
 
-  <title>Pooling Layer in CNN (1) | 张 瀚 铎 Zhang Handuo</title>
+  
+
+  <title>You only look once (YOLO) -- (2) | 张 瀚 铎 Zhang Handuo</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#toc" data-offset="71" class="dark">
@@ -232,7 +234,7 @@
 <div class="article-header">
   
   
-    <img src="/img/pooling_layer.png" class="article-banner" itemprop="image">
+    <img src="/img/yolo/intro_yolo_cars.jpeg" class="article-banner" itemprop="image">
   
 
   
@@ -241,7 +243,7 @@
 
 
   <div class="article-container">
-    <h1 itemprop="name">Pooling Layer in CNN (1)</h1>
+    <h1 itemprop="name">You only look once (YOLO) -- (2)</h1>
 
     
 
@@ -257,9 +259,9 @@
 
   <span class="article-date">
     
-    <meta content="2018-05-02 10:16:18 &#43;0800 CST" itemprop="datePublished">
-    <time datetime="2018-05-02 10:16:18 &#43;0800 CST" itemprop="dateModified">
-      May 2, 2018
+    <meta content="2018-08-20 16:21:12 &#43;0800 CST" itemprop="datePublished">
+    <time datetime="2018-08-20 16:21:12 &#43;0800 CST" itemprop="dateModified">
+      Aug 20, 2018
     </time>
   </span>
   <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
@@ -269,7 +271,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    3 min read
+    2 min read
   </span>
   
 
@@ -283,7 +285,7 @@
   <span class="article-categories">
     <i class="fa fa-folder"></i>
     
-    <a href="https://zhanghanduo.github.io/categories/network-architecture/">Network architecture</a
+    <a href="https://zhanghanduo.github.io/categories/object-detection/">Object Detection</a
     >
     
   </span>
@@ -296,35 +298,35 @@
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Pooling%20Layer%20in%20CNN%20%281%29&amp;url=https%3a%2f%2fzhanghanduo.github.io%2fpost%2fpooling%2f"
+         href="https://twitter.com/intent/tweet?text=You%20only%20look%20once%20%28YOLO%29%20--%20%282%29&amp;url=https%3a%2f%2fzhanghanduo.github.io%2fpost%2fyolo2%2f"
          target="_blank" rel="noopener">
         <i class="fa fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fzhanghanduo.github.io%2fpost%2fpooling%2f"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fzhanghanduo.github.io%2fpost%2fyolo2%2f"
          target="_blank" rel="noopener">
         <i class="fa fa-facebook"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fzhanghanduo.github.io%2fpost%2fpooling%2f&amp;title=Pooling%20Layer%20in%20CNN%20%281%29"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fzhanghanduo.github.io%2fpost%2fyolo2%2f&amp;title=You%20only%20look%20once%20%28YOLO%29%20--%20%282%29"
          target="_blank" rel="noopener">
         <i class="fa fa-linkedin"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fzhanghanduo.github.io%2fpost%2fpooling%2f&amp;title=Pooling%20Layer%20in%20CNN%20%281%29"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fzhanghanduo.github.io%2fpost%2fyolo2%2f&amp;title=You%20only%20look%20once%20%28YOLO%29%20--%20%282%29"
          target="_blank" rel="noopener">
         <i class="fa fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Pooling%20Layer%20in%20CNN%20%281%29&amp;body=https%3a%2f%2fzhanghanduo.github.io%2fpost%2fpooling%2f">
+         href="mailto:?subject=You%20only%20look%20once%20%28YOLO%29%20--%20%282%29&amp;body=https%3a%2f%2fzhanghanduo.github.io%2fpost%2fyolo2%2f">
         <i class="fa fa-envelope"></i>
       </a>
     </li>
@@ -340,100 +342,44 @@
     <div class="article-style" itemprop="articleBody">
       
 
-<p>Today I didn&rsquo;t have the mood to continue my work on map merging of different cameras. So I read the paper from DeepMind of <code>Learned Deformation Stability in Convolutional Neural Networks</code> recommended by <a href="https://wangchen.online/" target="_blank">Wang Chen</a>.</p>
+<p>YOLO has higher localization errors and the recall (measure how good to locate all objects) is lower, compared to SSD. YOLOv2 is the second version of the YOLO with the objective of improving the accuracy significantly while making it faster.</p>
 
-<h2 id="1-convolution-operation">1. Convolution Operation</h2>
+<p>The backbone network architecture of YOLO v2 is as follows:
+<img src="/img/yolo/yolo2_net.jpg" alt="Yolo2 Backbone" /></p>
 
-<p>Convolution operation is typically denoted with an asterisk<sup class="footnote-ref" id="fnref:fn1"><a href="#fn:fn1">1</a></sup>:
-$$
-s(t)=(x*w)(t)
-$$
-In Convolutional network terminology, the <em>x</em> is referred to as the <strong>input</strong>, and the <em>w</em> as the <strong>kernel</strong>. The output is sometimes referred to as the <strong>feature map</strong>.</p>
+<h2 id="1-accuracy-improvements">1. Accuracy Improvements</h2>
 
-<hr />
+<h3 id="batch-normalization">Batch Normalization</h3>
 
-<p>Convolution leverages three ideas that help improve the ML system: <strong>sparse interactions</strong>, <strong>parameter sharing</strong> and <strong>equivariant representations</strong>. Moreover, convolution provides a means for working with inputs of variable size.</p>
+<p>Also removes the need of dropouts. mAP increases by 2%.</p>
 
-<h4 id="sparse-interactions">- Sparse interactions</h4>
+<h3 id="high-resolution-classifier">High-resolution Classifier</h3>
 
-<p>Also called sparse connectivity or sparse weights, makes the kernel smaller than the input. By detecting small, meaningful features such as edges with kernels (tens or hundreds of pixels), we don&rsquo;t need to process all the input pixels(millions), which means much fewer parameters.</p>
+<p>To generate predictions with shape of $7\times 7 \times 125$, we replace the final fully connected layers with a  $3\times 3$ <code>convolution layer</code> each outputting 1024 output channels. Then we apply a final $1\times 1$ convolutional layer to convert the $7\times 7 \times 1024$ output into $7\times 7 \times 125$ and retrain it end-to-end. This makes training easier and moves mAP up by 4%.</p>
 
-<table>
-    <tbody>
-        <tr>
-            <td>
-                <img src="https://gitlab.com/handuo/msc_storage/uploads/4c0bd1f6e4a69d35c8390362fbbca78a/sparse_connectivity.png" alt="Sparse connectivity" width="80%">
-            </td>
-            <td>
-                <img src="https://gitlab.com/handuo/msc_storage/uploads/bf6611fd0b7646dcc68358a173be3388/param_sharing.png" alt="Parameter sharing" width="100%">
-            </td>
-        </tr>
-        <tr align="center">
-            <td>Sparse connectivity</td>
-            <td>Parameter sharing</td>
-        </td>
-    </tbody>
-</table>
+<h3 id="convolution-with-anchor-boxes">Convolution with Anchor Boxes</h3>
 
-<h4 id="parameter-sharing">- Parameter sharing</h4>
+<p>Early training is susceptible to unstable gradients. Arbitrary guesses on the boundary boxes may result in steep gradient changes.</p>
 
-<p>Refers to using the same parameter for more than one function in a model, so a network has <strong>tied weights</strong>. This reduces the storage requirements of the model to <em>k</em> parameters.</p>
+<p>In real life, boudnary boxes are not arbitrary. So the author create 5 <strong>anchor</strong> boxes with the following shapes.</p>
 
-<h4 id="equivariance-to-translation">- Equivariance to translation</h4>
+<p><img src="/img/yolo/anchor_box.jpeg" alt="5 anchor boxes" /></p>
 
-<p>But not to other transformations like scale or rotation change.</p>
+<p>Instead of directly predicting 5 arbitrary boundary boxes, we predict offsdets to each of the anchor boxes. If we <strong>constrain</strong> the offset values, we can maintain the diversity of the predictions and have each prediction focusing on specific shape. So the initial training will be more stable.</p>
 
-<hr />
+<h3 id="dimension-clusters">Dimension Clusters</h3>
 
-<h2 id="2-pooling">2. Pooling</h2>
+<p>In many problem domains, the boundary boxes have strong patterns. For example, in the autonomous driving, the 2 most common boundary boxes will be cars and pedestrians at different distances. To identify the top-K boundary boxes that have the best coverage for the training data, we run K-means clustering on the training data to locate the centroids of the top-K clusters.</p>
 
-<p>In all cases, pooling helps to make the representation become approximately invariant to small translations of the input. Pooling over spatial regions produces invariance to translation, but if we pool over the outputs of separately parametrized convolutions, the features can learn which transformations to become invariant to.</p>
+<p>Since we are dealing with boundary boxes rather than points, we cannot use the regular spatial distance to measure datapoint distances. No surprise, we use IoU.</p>
 
-<p>Because pooling summarizes the responses over a whole neighborhood, it is
-possible to use fewer pooling units than detector units, by reporting summary
-statistics for pooling regions spaced k pixels apart rather than 1 pixel apart.</p>
+<h3 id="direct-location-prediction">Direct location prediction</h3>
 
-<p>This article tries to analyze the relationship between the pooling layers and deformation stability in CNN based on the paper <code>Learned Deformation Stability in Convolutional Neural Networks</code>.</p>
+<p>We make predictions on the offsets to the anchors. Nevertheless, if it is unconstrained, our guesses will be randomized again. YOLO predicts 5 parameters (tx, ty, tw, th, and to) and applies the sigma function to constraint its possible offset range.</p>
 
-<p>The paper tries to address the following questions:
- - Does pooling have an effect on the learned deformation stability?</p>
+<p><img src="/img/yolo/yolo2_location_predict.jpeg" alt="Location prediction on anchors" /></p>
 
-<ul>
-<li><p>Is deformation stability achieved in the absence of pooling?</p></li>
-
-<li><p>How can deformation stability be achieved in the absence of pooling?</p></li>
-</ul>
-
-<p>Traditional way of thinking <code>pooling</code> layer is that it is useful in two reasons:</p>
-
-<ol>
-<li>By eliminating non-maximal (for <em>max-pooling</em>), it reduces computation for upper layers.</li>
-<li>It porvides a form of translation invariance. Imagine cascading a max-pooling layer with a convolutional layer. There are 8 directions in which one can translate the input image by a single pixel. If max-pooling is done over a $2\times2$ region, 3 out of these 8 possible configurations will produce exactly the same output at the conv layer. For $3\times3$ windows, this jumps to $\frac{5}{8}$.</li>
-</ol>
-
-<p>Then the author first defines the invariance to transformations of an input <em>X</em> that do not affect the output <em>Y</em>:</p>
-
-<p>$$
- P(Y|\tau(X))=P(Y|X) \forall \tau \in T
-$$</p>
-
-<p>Then he defines the measurement of <strong>sensitivity to deformation</strong> to evaluate this invariance.</p>
-
-<p>For a representation <em>r</em> mapping from input image to some layer of a CNN, the measurement is:</p>
-
-<p>$$
-\frac{dcos(r(x), r(\tau(x))}{median(dcos(r(x), r(y)))}
-$$
-where <em>dcos</em> is the cosine distance. That is we normalize distances by the median distance between randomly selected images from the original dataset.</p>
-<div class="footnotes">
-
-<hr />
-
-<ol>
-<li id="fn:fn1">Ian Goodfellow, Yoshua Bengio, and Aaron Courville, <strong>Deep Learning</strong>, 2016.
- <a class="footnote-return" href="#fnref:fn1"><sup>^</sup></a></li>
-</ol>
-</div>
+<p>With the use of k-means clustering (dimension clusters) and the improvement mentioned in this section, mAP increases 5%.</p>
 
     </div>
 
@@ -452,6 +398,18 @@ where <em>dcos</em> is the cosine distance. That is we normalize distances by th
 
 
     
+    
+    <div class="article-widget">
+      <div class="hr-light"></div>
+      <h3>Related</h3>
+      <ul>
+        
+        <li><a href="/post/yolo1/">You only look once (YOLO) -- (1)</a></li>
+        
+        <li><a href="/post/pooling/">Pooling Layer in CNN (1)</a></li>
+        
+      </ul>
+    </div>
     
 
     
