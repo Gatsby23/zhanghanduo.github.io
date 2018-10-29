@@ -54,14 +54,15 @@ Then follow the &lt;code&gt;readme.md&lt;/code&gt; to install necessary packages
 &lt;p&gt;to make some settings valid.&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;Install CUDA&lt;/li&gt;
+&lt;li&gt;Install CUDA:
+Type:&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo chmod a+x cuda_xxx_linux_64.run
 sudo ./cuda_xxx_linux_64.run
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;add the following settings to your .zshrc or .bashrc file and ** source ** it:&lt;/p&gt;
+&lt;p&gt;add the following settings to your .zshrc or .bashrc file and &lt;strong&gt;source&lt;/strong&gt; it:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;export PATH=$PATH:/usr/local/cuda/bin
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
