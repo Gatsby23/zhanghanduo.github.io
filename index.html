@@ -714,8 +714,11 @@
   </h3>
   <div class="article-style" itemprop="articleBody">
     
-    When you want to install a brand new Ubuntu 16.04 system 1. Open Software &amp; Updates and choose the fastest source 2. Update the system:
-sudo sh -c 'echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list' sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116 sudo add-apt-repository ppa:graphics-drivers/ppa sudo apt-get update sudo apt-get dist-upgrade sudo apt-get install build-essential git   Install Nvidia driver  sudo apt-get install nvidia-396 nvidia-settings  Under cases you have Intel GPU also, please type:  sudo prime-select nvidia  Clone the dotfile repository:  mkdir softwares &amp;&amp; cd softwares https://github.
+    When you want to install a brand new Ubuntu 16.04 system. You could try to follow this guidance.
+ Open Software &amp; Updates and choose the fastest source.
+ Update the system:
+sudo sh -c 'echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list' sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116 sudo add-apt-repository ppa:graphics-drivers/ppa sudo apt-get update sudo apt-get dist-upgrade sudo apt-get install build-essential git  Install Nvidia driver
+sudo apt-get install nvidia-396 nvidia-settings  Under cases you have Intel GPU also, please type:
     
   </div>
   <p class="read-more" itemprop="mainEntityOfPage">

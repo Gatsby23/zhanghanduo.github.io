@@ -254,8 +254,11 @@
     <h2><a href="https://zhanghanduo.github.io/post/new_system/">Install new linux environment</a></h2>
     <div class="article-style">
       
-      When you want to install a brand new Ubuntu 16.04 system 1. Open Software &amp; Updates and choose the fastest source 2. Update the system:
-sudo sh -c &lsquo;echo &quot;deb <a href="http://packages.ros.org/ros/ubuntu" target="_blank">http://packages.ros.org/ros/ubuntu</a> $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&rsquo; sudo apt-key adv &ndash;keyserver hkp://ha.pool.sks-keyservers.net:80 &ndash;recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116 sudo add-apt-repository ppa:graphics-drivers/ppa sudo apt-get update sudo apt-get dist-upgrade sudo apt-get install build-essential git   Install Nvidia driver  sudo apt-get install nvidia-396 nvidia-settings  Under cases you have Intel GPU also, please type:  sudo prime-select nvidia  Clone the dotfile repository:  mkdir softwares &amp;&amp; cd softwares <a href="https://github" target="_blank">https://github</a>.
+      When you want to install a brand new Ubuntu 16.04 system. You could try to follow this guidance.
+ Open Software &amp; Updates and choose the fastest source.
+ Update the system:
+sudo sh -c &lsquo;echo &quot;deb <a href="http://packages.ros.org/ros/ubuntu" target="_blank">http://packages.ros.org/ros/ubuntu</a> $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&rsquo; sudo apt-key adv &ndash;keyserver hkp://ha.pool.sks-keyservers.net:80 &ndash;recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116 sudo add-apt-repository ppa:graphics-drivers/ppa sudo apt-get update sudo apt-get dist-upgrade sudo apt-get install build-essential git  Install Nvidia driver
+sudo apt-get install nvidia-396 nvidia-settings  Under cases you have Intel GPU also, please type:
       
     </div>
   </div>
