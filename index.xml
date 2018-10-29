@@ -11,6 +11,58 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Price and spec of cloud based GPU</title>
+      <link>https://zhanghanduo.github.io/post/gpu_cloud/</link>
+      <pubDate>Mon, 29 Oct 2018 14:17:43 +0800</pubDate>
+      
+      <guid>https://zhanghanduo.github.io/post/gpu_cloud/</guid>
+      <description>&lt;p&gt;I summarized several cloud based GPU services:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name of services&lt;/th&gt;
+&lt;th&gt;Specification&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Price (US$)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;AWS P2 instance&lt;/td&gt;
+&lt;td&gt;p2.xLarge&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.9 / hour&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Azure NC6&lt;/td&gt;
+&lt;td&gt;1xK80&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.9 / hour&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://lambdalabs.com/service/gpu-cloud&#34; target=&#34;_blank&#34;&gt;Lambda GPU cloud&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;8x AWS P2 instances&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.90 / GPU/ hour&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://ts.ntu.edu.sg/sites/hpc/Charges/Home.aspx&#34; target=&#34;_blank&#34;&gt;NTU HPCC&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;2 units of 1-P100 is scheduled to be ready by End of October,&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;2 Units of 8-V100 is scheduled to be ready by End of December&lt;/td&gt;
+&lt;td&gt;0.78 / core/ hour&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
       <title>You only look once (YOLO) -- (2)</title>
       <link>https://zhanghanduo.github.io/post/yolo2/</link>
       <pubDate>Mon, 20 Aug 2018 16:21:12 +0800</pubDate>
