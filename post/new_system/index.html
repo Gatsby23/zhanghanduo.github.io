@@ -78,7 +78,7 @@ sudo sh -c &#39;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release 
   
   <meta property="og:site_name" content="张 瀚 铎 Zhang Handuo">
   <meta property="og:url" content="https://zhanghanduo.github.io/post/new_system/">
-  <meta property="og:title" content="New_system | 张 瀚 铎 Zhang Handuo">
+  <meta property="og:title" content="Install new linux environment | 张 瀚 铎 Zhang Handuo">
   <meta property="og:description" content="When you want to install a brand new Ubuntu 16.04 system 1. Open Software &amp; Updates and choose the fastest source 2. Update the system:
 sudo sh -c &#39;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#39; sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116 sudo add-apt-repository ppa:graphics-drivers/ppa sudo apt-get update sudo apt-get dist-upgrade sudo apt-get install build-essential git   Install Nvidia driver  sudo apt-get install nvidia-396 nvidia-settings  Under cases you have Intel GPU also, please type:  sudo prime-select nvidia  Clone the dotfile repository:  mkdir softwares &amp;&amp; cd softwares https://github.">
   <meta property="og:locale" content="en-us">
@@ -92,7 +92,7 @@ sudo sh -c &#39;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release 
 
   
 
-  <title>New_system | 张 瀚 铎 Zhang Handuo</title>
+  <title>Install new linux environment | 张 瀚 铎 Zhang Handuo</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#toc" data-offset="71" class="dark">
@@ -251,7 +251,7 @@ sudo sh -c &#39;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release 
 
 
   <div class="article-container">
-    <h1 itemprop="name">New_system</h1>
+    <h1 itemprop="name">Install new linux environment</h1>
 
     
 
@@ -297,7 +297,7 @@ sudo sh -c &#39;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release 
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=New_system&amp;url=https%3a%2f%2fzhanghanduo.github.io%2fpost%2fnew_system%2f"
+         href="https://twitter.com/intent/tweet?text=Install%20new%20linux%20environment&amp;url=https%3a%2f%2fzhanghanduo.github.io%2fpost%2fnew_system%2f"
          target="_blank" rel="noopener">
         <i class="fa fa-twitter"></i>
       </a>
@@ -311,21 +311,21 @@ sudo sh -c &#39;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release 
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fzhanghanduo.github.io%2fpost%2fnew_system%2f&amp;title=New_system"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fzhanghanduo.github.io%2fpost%2fnew_system%2f&amp;title=Install%20new%20linux%20environment"
          target="_blank" rel="noopener">
         <i class="fa fa-linkedin"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fzhanghanduo.github.io%2fpost%2fnew_system%2f&amp;title=New_system"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fzhanghanduo.github.io%2fpost%2fnew_system%2f&amp;title=Install%20new%20linux%20environment"
          target="_blank" rel="noopener">
         <i class="fa fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=New_system&amp;body=https%3a%2f%2fzhanghanduo.github.io%2fpost%2fnew_system%2f">
+         href="mailto:?subject=Install%20new%20linux%20environment&amp;body=https%3a%2f%2fzhanghanduo.github.io%2fpost%2fnew_system%2f">
         <i class="fa fa-envelope"></i>
       </a>
     </li>
@@ -377,98 +377,99 @@ Then follow the <code>readme.md</code> to install necessary packages and change 
 <p>to make some settings valid.</p>
 
 <ol>
-<li>Install CUDA
-```
-sudo chmod a+x cuda_xxx_linux_64.run
-sudo ./cuda_xxx_linux_64.run</li>
+<li>Install CUDA</li>
 </ol>
 
-<pre><code>add the following settings to your .zshrc or .bashrc file and ** source ** it:
+<pre><code>sudo chmod a+x cuda_xxx_linux_64.run
+sudo ./cuda_xxx_linux_64.run
 </code></pre>
 
-<p>export PATH=$PATH:/usr/local/cuda/bin
+<p>add the following settings to your .zshrc or .bashrc file and ** source ** it:</p>
+
+<pre><code>export PATH=$PATH:/usr/local/cuda/bin
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
-export CUDA_HOME=/usr/local/cuda</p>
-
-<pre><code>5. Install CUDNN
-unzip the CUDNN file:
+export CUDA_HOME=/usr/local/cuda
 </code></pre>
 
-<p>tar -xzvf cudnn-9.0-linux-x64-v7.tgz</p>
+<ol>
+<li>Install CUDNN
+unzip the CUDNN file:</li>
+</ol>
 
-<pre><code>Then copy and change permissions:
+<pre><code> tar -xzvf cudnn-9.0-linux-x64-v7.tgz
 </code></pre>
 
-<p>sudo cp cuda/include/cudnn.h /usr/local/cuda/include
+<p>Then copy and change permissions:</p>
+
+<pre><code> sudo cp cuda/include/cudnn.h /usr/local/cuda/include
  sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
- sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</p>
-
-<pre><code>
-6. Install ROS Kinetic
+ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 </code></pre>
 
-<p>sudo apt-get install ros-kinetic-desktop-full
+<ol>
+<li><p>Install ROS Kinetic</p>
+
+<pre><code>sudo apt-get install ros-kinetic-desktop-full
 sudo rosdep init
 rosdep update
-sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool</p>
-
-<pre><code>add the following settings to your .zshrc file and ** source ** it:
+sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool
 </code></pre>
 
-<p>source /opt/ros/kinetic/setup.zsh
-source ~/.zshrc</p>
+<p>add the following settings to your .zshrc file and ** source ** it:</p>
 
-<pre><code>If you use bash instead of zsh you need to run the following commands to set up your shell:
-</code></pre>
-
-<p>source /opt/ros/kinetic/setup.bash
-source ~/.bashrc</p>
-
-<pre><code>
-7. Instal OpenCV 3.x
-
-7.1 Download
-OpenCV source codes can be downloaded in [opencv github](https://github.com/opencv/opencv/releases).
-OpenCV corresponding contrib can be downloaded in [opencv_contrib github](https://github.com/opencv/opencv_contrib/releases).
-
-7.2 Prerequisites
-
-Before you install OpenCV
-</code></pre>
-
-<p>mkdir release &amp;&amp; cd release
-sudo apt-get build-dep -y opencv
-(Optional) sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev</p>
-
-<pre><code>7.3 Cmake
-
-For normal configure, just type:
-</code></pre>
-
-<p>cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=ON -D WITH_V4L=ON -D ENABLE_CXX11=ON -D ENABLE_PRECOMPILED_HEADERS=OFF -D CMAKE_CXX_FLAGS=&lsquo;-std=c++11&rsquo; ..</p>
-
-<pre><code>With contrib, just add: `-D OPENCV_EXTRA_MODULES_PATH=/home/hd/softwares/opencv_contrib-3.4.1/modules`.
-
-With CUDA, just add: `-D WITH_CUDA=ON -D ENABLE_FAST_MATH=1 -D CUDA_FAST_MATH=1 -D WITH_CUBLAS=1 -D CUDA_GENERATION=Auto`.
-
-If you encounter some C++ 11 errors during compiling when you install 3.4 or later, just add: `-D CMAKE_CXX_FLAGS='-std=c++11' -D CUDA_NVCC_FLAGS='-std=c++11 --expt-relaxed-constexpr`.
-
-7.4 Compiling and installing
-</code></pre>
-
-<p>make -j8
-sudo make install</p>
-
-<pre><code>
-7.5 Environment
-</code></pre>
-
-<p>echo &lsquo;/usr/local/lib&rsquo; | sudo tee -a /etc/ld.so.conf.d/opencv.conf<br />
-sudo ldconfig<br />
-printf &lsquo;# OpenCV\nPKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig\nexport PKG_CONFIG_PATH\n&rsquo; &gt;&gt; ~/.bashrc<br />
+<pre><code>source /opt/ros/kinetic/setup.zsh
 source ~/.zshrc
-pkg-config &ndash;modversion opencv	//check if opencv is installed and its version
-```</p>
+</code></pre>
+
+<p>If you use bash instead of zsh you need to run the following commands to set up your shell:</p>
+
+<pre><code>source /opt/ros/kinetic/setup.bash
+source ~/.bashrc
+</code></pre></li>
+
+<li><p>Instal OpenCV 3.x</p></li>
+</ol>
+
+<p>7.1 Download
+OpenCV source codes can be downloaded in <a href="https://github.com/opencv/opencv/releases" target="_blank">opencv github</a>.
+OpenCV corresponding contrib can be downloaded in <a href="https://github.com/opencv/opencv_contrib/releases" target="_blank">opencv_contrib github</a>.</p>
+
+<p>7.2 Prerequisites</p>
+
+<p>Before you install OpenCV</p>
+
+<pre><code>mkdir release &amp;&amp; cd release
+sudo apt-get build-dep -y opencv
+(Optional) sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev
+</code></pre>
+
+<p>7.3 Cmake</p>
+
+<p>For normal configure, just type:</p>
+
+<pre><code>cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=ON -D WITH_V4L=ON -D ENABLE_CXX11=ON -D ENABLE_PRECOMPILED_HEADERS=OFF -D CMAKE_CXX_FLAGS='-std=c++11' ..
+</code></pre>
+
+<p>With contrib, just add: <code>-D OPENCV_EXTRA_MODULES_PATH=/home/hd/softwares/opencv_contrib-3.4.1/modules</code>.</p>
+
+<p>With CUDA, just add: <code>-D WITH_CUDA=ON -D ENABLE_FAST_MATH=1 -D CUDA_FAST_MATH=1 -D WITH_CUBLAS=1 -D CUDA_GENERATION=Auto</code>.</p>
+
+<p>If you encounter some C++ 11 errors during compiling when you install 3.4 or later, just add: <code>-D CMAKE_CXX_FLAGS='-std=c++11' -D CUDA_NVCC_FLAGS='-std=c++11 --expt-relaxed-constexpr</code>.</p>
+
+<p>7.4 Compiling and installing</p>
+
+<pre><code>make -j8
+sudo make install
+</code></pre>
+
+<p>7.5 Environment</p>
+
+<pre><code>echo '/usr/local/lib' | sudo tee -a /etc/ld.so.conf.d/opencv.conf  
+sudo ldconfig  
+printf '# OpenCV\nPKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig\nexport PKG_CONFIG_PATH\n' &gt;&gt; ~/.bashrc  
+source ~/.zshrc 
+pkg-config --modversion opencv	//check if opencv is installed and its version
+</code></pre>
 
     </div>
 
