@@ -11,6 +11,145 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>New_system</title>
+      <link>https://zhanghanduo.github.io/post/new_system/</link>
+      <pubDate>Mon, 29 Oct 2018 14:46:14 +0800</pubDate>
+      
+      <guid>https://zhanghanduo.github.io/post/new_system/</guid>
+      <description>&lt;p&gt;When you want to install a brand new Ubuntu 16.04 system
+1. Open &lt;code&gt;Software &amp;amp; Updates&lt;/code&gt; and choose the fastest source
+2. Update the system:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo sh -c &#39;echo &amp;quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&amp;quot; &amp;gt; /etc/apt/sources.list.d/ros-latest.list&#39;
+sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt-get update
+sudo apt-get dist-upgrade
+sudo apt-get install build-essential git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Install Nvidia driver
+&lt;code&gt;
+sudo apt-get install nvidia-396 nvidia-settings
+&lt;/code&gt;
+Under cases you have Intel GPU also, please type:
+&lt;code&gt;
+sudo prime-select nvidia
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Clone the dotfile repository:
+&lt;code&gt;
+mkdir softwares &amp;amp;&amp;amp; cd softwares
+https://github.com/zhanghanduo/dotfiles.git
+cd dotfiles
+&lt;/code&gt;
+Then follow the &lt;code&gt;readme.md&lt;/code&gt; to install necessary packages and change some settings.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Then type:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo reboot
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;to make some settings valid.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Install CUDA
+```
+sudo chmod a+x cuda_xxx_linux_64.run
+sudo ./cuda_xxx_linux_64.run&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;add the following settings to your .zshrc or .bashrc file and ** source ** it:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;export PATH=$PATH:/usr/local/cuda/bin
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+export CUDA_HOME=/usr/local/cuda&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;5. Install CUDNN
+unzip the CUDNN file:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;tar -xzvf cudnn-9.0-linux-x64-v7.tgz&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Then copy and change permissions:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;sudo cp cuda/include/cudnn.h /usr/local/cuda/include
+ sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
+ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+6. Install ROS Kinetic
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;sudo apt-get install ros-kinetic-desktop-full
+sudo rosdep init
+rosdep update
+sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;add the following settings to your .zshrc file and ** source ** it:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;source /opt/ros/kinetic/setup.zsh
+source ~/.zshrc&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;If you use bash instead of zsh you need to run the following commands to set up your shell:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;source /opt/ros/kinetic/setup.bash
+source ~/.bashrc&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+7. Instal OpenCV 3.x
+
+7.1 Download
+OpenCV source codes can be downloaded in [opencv github](https://github.com/opencv/opencv/releases).
+OpenCV corresponding contrib can be downloaded in [opencv_contrib github](https://github.com/opencv/opencv_contrib/releases).
+
+7.2 Prerequisites
+
+Before you install OpenCV
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;mkdir release &amp;amp;&amp;amp; cd release
+sudo apt-get build-dep -y opencv
+(Optional) sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;7.3 Cmake
+
+For normal configure, just type:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=ON -D WITH_V4L=ON -D ENABLE_CXX11=ON -D ENABLE_PRECOMPILED_HEADERS=OFF -D CMAKE_CXX_FLAGS=&amp;lsquo;-std=c++11&amp;rsquo; ..&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;With contrib, just add: `-D OPENCV_EXTRA_MODULES_PATH=/home/hd/softwares/opencv_contrib-3.4.1/modules`.
+
+With CUDA, just add: `-D WITH_CUDA=ON -D ENABLE_FAST_MATH=1 -D CUDA_FAST_MATH=1 -D WITH_CUBLAS=1 -D CUDA_GENERATION=Auto`.
+
+If you encounter some C++ 11 errors during compiling when you install 3.4 or later, just add: `-D CMAKE_CXX_FLAGS=&#39;-std=c++11&#39; -D CUDA_NVCC_FLAGS=&#39;-std=c++11 --expt-relaxed-constexpr`.
+
+7.4 Compiling and installing
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;make -j8
+sudo make install&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+7.5 Environment
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;echo &amp;lsquo;/usr/local/lib&amp;rsquo; | sudo tee -a /etc/ld.so.conf.d/opencv.conf&lt;br /&gt;
+sudo ldconfig&lt;br /&gt;
+printf &amp;lsquo;# OpenCV\nPKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig\nexport PKG_CONFIG_PATH\n&amp;rsquo; &amp;gt;&amp;gt; ~/.bashrc&lt;br /&gt;
+source ~/.zshrc
+pkg-config &amp;ndash;modversion opencv	//check if opencv is installed and its version
+```&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Price and spec of cloud based GPU</title>
       <link>https://zhanghanduo.github.io/post/gpu_cloud/</link>
       <pubDate>Mon, 29 Oct 2018 14:17:43 +0800</pubDate>
@@ -48,14 +187,8 @@
 
 &lt;tr&gt;
 &lt;td&gt;&lt;a href=&#34;https://ts.ntu.edu.sg/sites/hpc/Charges/Home.aspx&#34; target=&#34;_blank&#34;&gt;NTU HPCC&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;2 units of 1-P100 is scheduled to be ready by End of October,&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;2 Units of 8-V100 is scheduled to be ready by End of December&lt;/td&gt;
-&lt;td&gt;0.78 / core/ hour&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td&gt;2 units of 1-P100 is scheduled to be ready by End of October&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.78 / core/ hour&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;

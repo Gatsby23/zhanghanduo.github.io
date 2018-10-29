@@ -13,13 +13,23 @@
     
     
     <item>
+      <title>New_system</title>
+      <link>https://zhanghanduo.github.io/post/new_system/</link>
+      <pubDate>Mon, 29 Oct 2018 14:46:14 +0800</pubDate>
+      
+      <guid>https://zhanghanduo.github.io/post/new_system/</guid>
+      <description>When you want to install a brand new Ubuntu 16.04 system 1. Open Software &amp;amp; Updates and choose the fastest source 2. Update the system:
+sudo sh -c &#39;echo &amp;quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&amp;quot; &amp;gt; /etc/apt/sources.list.d/ros-latest.list&#39; sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116 sudo add-apt-repository ppa:graphics-drivers/ppa sudo apt-get update sudo apt-get dist-upgrade sudo apt-get install build-essential git   Install Nvidia driver  sudo apt-get install nvidia-396 nvidia-settings  Under cases you have Intel GPU also, please type:  sudo prime-select nvidia  Clone the dotfile repository:  mkdir softwares &amp;amp;&amp;amp; cd softwares https://github.</description>
+    </item>
+    
+    <item>
       <title>Price and spec of cloud based GPU</title>
       <link>https://zhanghanduo.github.io/post/gpu_cloud/</link>
       <pubDate>Mon, 29 Oct 2018 14:17:43 +0800</pubDate>
       
       <guid>https://zhanghanduo.github.io/post/gpu_cloud/</guid>
       <description>I summarized several cloud based GPU services:
-   Name of services Specification Price (US$)     AWS P2 instance p2.xLarge 0.9 / hour   Azure NC6 1xK80 0.9 / hour   Lambda GPU cloud 8x AWS P2 instances 0.90 / GPU/ hour   NTU HPCC 2 units of 1-P100 is scheduled to be ready by End of October,    2 Units of 8-V100 is scheduled to be ready by End of December 0.</description>
+   Name of services Specification Price (US$)     AWS P2 instance p2.xLarge 0.9 / hour   Azure NC6 1xK80 0.9 / hour   Lambda GPU cloud 8x AWS P2 instances 0.90 / GPU/ hour   NTU HPCC 2 units of 1-P100 is scheduled to be ready by End of October 0.78 / core/ hour    </description>
     </item>
     
     <item>

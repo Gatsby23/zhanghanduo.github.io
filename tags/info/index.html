@@ -79,7 +79,7 @@
   <meta property="og:description" content="Ph.D Student in Computer Vision">
   <meta property="og:locale" content="en-us">
   
-  <meta property="og:updated_time" content="2018-10-29T14:17:43&#43;08:00">
+  <meta property="og:updated_time" content="2018-10-29T14:46:14&#43;08:00">
   
 
   
@@ -251,11 +251,18 @@
   
   
   <div>
-    <h2><a href="https://zhanghanduo.github.io/post/gpu_cloud/">Price and spec of cloud based GPU</a></h2>
+    <h2><a href="https://zhanghanduo.github.io/post/new_system/">New_system</a></h2>
     <div class="article-style">
       
-      I summarized several cloud based GPU services:
-   Name of services Specification Price (US$)     AWS P2 instance p2.xLarge 0.9 / hour   Azure NC6 1xK80 0.9 / hour   Lambda GPU cloud 8x AWS P2 instances 0.90 / GPU/ hour   NTU HPCC 2 units of 1-P100 is scheduled to be ready by End of October,    2 Units of 8-V100 is scheduled to be ready by End of December 0.
+      When you want to install a brand new Ubuntu 16.04 system 1. Open Software &amp; Updates and choose the fastest source 2. Update the system:
+sudo sh -c &lsquo;echo &quot;deb <a href="http://packages.ros.org/ros/ubuntu" target="_blank">http://packages.ros.org/ros/ubuntu</a> $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&rsquo; sudo apt-key adv &ndash;keyserver hkp://ha.pool.sks-keyservers.net:80 &ndash;recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116 sudo add-apt-repository ppa:graphics-drivers/ppa sudo apt-get update sudo apt-get dist-upgrade sudo apt-get install build-essential git   Install Nvidia driver  sudo apt-get install nvidia-396 nvidia-settings  Under cases you have Intel GPU also, please type:  sudo prime-select nvidia  Clone the dotfile repository:  mkdir softwares &amp;&amp; cd softwares <a href="https://github" target="_blank">https://github</a>.
+      
+    </div>
+  </div>
+  
+  <div>
+    <h2><a href="https://zhanghanduo.github.io/post/gpu_cloud/">Price and spec of cloud based GPU</a></h2>
+    <div class="article-style">
       
     </div>
   </div>
