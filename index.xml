@@ -76,9 +76,10 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;1) calibration做的不够准&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;2) 初始化的时候摄像头尽量冲着特征点丰富的地方，并缓慢移动摄像头，充分初始化
-IMU如果质量不好也会轻微的漂，但是不严重&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;2) 初始化的时候摄像头尽量冲着特征点丰富的地方，并缓慢移动摄像头，充分初始化&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;IMU如果质量不好也会轻微的漂，但是不严重&lt;/p&gt;
 </description>
     </item>
     
