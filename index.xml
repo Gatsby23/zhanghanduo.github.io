@@ -204,7 +204,7 @@ sudo apt-get build-dep -y opencv
 
 &lt;p&gt;With CUDA, just add: &lt;code&gt;-D WITH_CUDA=ON -D ENABLE_FAST_MATH=1 -D CUDA_FAST_MATH=1 -D WITH_CUBLAS=1 -D CUDA_GENERATION=Auto&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;If you encounter some C++ 11 errors during compiling when you install 3.4 or later, just add: &lt;code&gt;-D CMAKE_CXX_FLAGS=&#39;-std=c++11&#39; -D CUDA_NVCC_FLAGS=&#39;-std=c++11 --expt-relaxed-constexpr&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If you encounter some C++ 11 errors during compiling when you install 3.4 or later, just add: &lt;code&gt;-D CMAKE_CXX_FLAGS=&#39;-std=c++11&#39; -D CUDA_NVCC_FLAGS=&#39;-std=c++11 --expt-relaxed-constexpr&#39;&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;8.4 Compiling and installing&lt;/p&gt;
 
