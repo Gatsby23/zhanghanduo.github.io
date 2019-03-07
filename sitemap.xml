@@ -5,8 +5,8 @@
     
     <url>
     
-      <loc>https://zhanghanduo.github.io/post/questions_slam/</loc>
-      <lastmod>2018-11-03T18:09:01+08:00</lastmod>
+      <loc>https://zhanghanduo.github.io/publication/gmc/</loc>
+      <lastmod>2019-03-07T17:12:30+08:00</lastmod>
     </url>
     
   
@@ -70,6 +70,15 @@
     
       <loc>https://zhanghanduo.github.io/publication/ahrs/</loc>
       <lastmod>2018-04-30T13:48:11+08:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://zhanghanduo.github.io/post/questions_slam/</loc>
+      <lastmod>2018-04-03T18:09:01+08:00</lastmod>
     </url>
     
   
@@ -141,7 +150,7 @@
     <url>
     
       <loc>https://zhanghanduo.github.io/publication_types/1/</loc>
-      <lastmod>2017-09-24T19:36:47+08:00</lastmod>
+      <lastmod>2019-03-07T17:12:30+08:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -220,7 +229,7 @@
     <url>
     
       <loc>https://zhanghanduo.github.io/publication_types/</loc>
-      <lastmod>2017-09-24T19:36:47+08:00</lastmod>
+      <lastmod>2019-03-07T17:12:30+08:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -231,6 +240,16 @@
     
       <loc>https://zhanghanduo.github.io/tags/ros/</loc>
       <lastmod>2018-05-03T10:07:29+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://zhanghanduo.github.io/tags/slam/</loc>
+      <lastmod>2019-03-07T17:12:30+08:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -250,7 +269,7 @@
     <url>
     
       <loc>https://zhanghanduo.github.io/tags/tips/</loc>
-      <lastmod>2018-11-03T18:09:01+08:00</lastmod>
+      <lastmod>2018-05-03T10:07:29+08:00</lastmod>
       <priority>0</priority>
     </url>
     
