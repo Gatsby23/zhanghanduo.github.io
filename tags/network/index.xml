@@ -18,7 +18,7 @@
       <pubDate>Tue, 09 Apr 2019 15:20:37 +0800</pubDate>
       
       <guid>https://zhanghanduo.github.io/post/remote_edit/</guid>
-      <description>I recently found an hot github repository called code-server which is able to run VS Code on a remote server, accessible through the browser. So it suddenly came to me an idea to remotely edit any code for free as long as you have a linux environment with Internet. Here I will introduce you how to remotely edit and run without the need of Teamviewer, Anydesk, or VcXsrv, etc. Another advantage is that you don&amp;rsquo;t have to use VIM!</description>
+      <description>Remotely editing your work when your server does not have public IP address and you don&amp;rsquo;t want to spend any money is not so easy. Maybe you can use Team viewer or Anydesk or even chrome remote desktop, but there are high latencies. Maybe you can use ngrok to remotely ssh to your server, you have to use vim and you are not familiar with it at all 😧. I tried to use rmate but it is not convinient to edit across different files in a folder.</description>
     </item>
     
   </channel>
