@@ -17,7 +17,7 @@
       
     
   
-  <meta name="description" content="I recently found an hot github repository called code-server which is able to run VS Code on a remote server, accessible through the browser. So it suddenly came to me an idea to remotely edit any code for free as long as you have a linux environment with Internet. Here I will introduce you how to remotely edit and run without the need of Teamviewer, Anydesk, or VcXsrv, etc.">
+  <meta name="description" content="I recently found an hot github repository called code-server which is able to run VS Code on a remote server, accessible through the browser. So it suddenly came to me an idea to remotely edit any code for free as long as you have a linux environment with Internet. Here I will introduce you how to remotely edit and run without the need of Teamviewer, Anydesk, or VcXsrv, etc. Another advantage is that you don&rsquo;t have to use VIM!">
 
   
   <link rel="alternate" hreflang="en-us" href="https://zhanghanduo.github.io/post/remote_edit/">
@@ -78,7 +78,7 @@
   <meta property="og:site_name" content="张 瀚 铎 Zhang Handuo">
   <meta property="og:url" content="https://zhanghanduo.github.io/post/remote_edit/">
   <meta property="og:title" content="How to remotely edit your project without having to use VIM | 张 瀚 铎 Zhang Handuo">
-  <meta property="og:description" content="I recently found an hot github repository called code-server which is able to run VS Code on a remote server, accessible through the browser. So it suddenly came to me an idea to remotely edit any code for free as long as you have a linux environment with Internet. Here I will introduce you how to remotely edit and run without the need of Teamviewer, Anydesk, or VcXsrv, etc."><meta property="og:image" content="https://zhanghanduo.github.io/public/img/code-server/code-serve.png">
+  <meta property="og:description" content="I recently found an hot github repository called code-server which is able to run VS Code on a remote server, accessible through the browser. So it suddenly came to me an idea to remotely edit any code for free as long as you have a linux environment with Internet. Here I will introduce you how to remotely edit and run without the need of Teamviewer, Anydesk, or VcXsrv, etc. Another advantage is that you don&rsquo;t have to use VIM!"><meta property="og:image" content="https://zhanghanduo.github.io/img/code-server/code-serve.png">
   <meta property="og:locale" content="en-us">
   
   <meta property="article:published_time" content="2019-04-09T15:20:37&#43;08:00">
@@ -249,7 +249,7 @@
 <div class="article-header">
   
   
-    <img src="/public/img/code-server/code-serve.png" class="article-banner" itemprop="image">
+    <img src="/img/code-server/code-serve.png" class="article-banner" itemprop="image">
   
 
   
@@ -348,7 +348,7 @@
     <div class="article-style" itemprop="articleBody">
       
 
-<p>I recently found an hot github repository called <a href="https://github.com/codercom/code-server" target="_blank">code-server</a> which is able to run <strong>VS Code</strong> on a remote server, accessible through the browser. So it suddenly came to me an idea to remotely edit any code for free as long as you have a linux environment with Internet. Here I will introduce you how to remotely edit and run without the need of Teamviewer, Anydesk, or VcXsrv, etc.</p>
+<p>I recently found an hot github repository called <a href="https://github.com/codercom/code-server" target="_blank">code-server</a> which is able to run <strong>VS Code</strong> on a remote server, accessible through the browser. So it suddenly came to me an idea to remotely edit any code for free as long as you have a linux environment with Internet. Here I will introduce you how to remotely edit and run without the need of Teamviewer, Anydesk, or VcXsrv, etc. Another advantage is that you don&rsquo;t have to use VIM! I tried to use VIM a lot of times and failed after one or two days after.</p>
 
 <p>In this article I call the computer you are frequently on (or on the go) <em>client</em>, and the solely working computer or workstation <em>server</em>. Let&rsquo;s consider you understand the basic knowledge of SSH key as you are going to use it. For tutorial about how to generate SSH keys, please refer to <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2" target="_blank">How to set up SSH keys</a> and <a href="https://help.github.com/en/articles/connecting-to-github-with-ssh" target="_blank">connecting to GitHub with SSH</a>.</p>
 
@@ -365,7 +365,7 @@
 
 <h2 id="step-2-download-code-server">Step 2. Download code-server</h2>
 
-<p>Open this page on your client browser, find the latest release of <a href="https://github.com/codercom/code-server/releases" target="_blank">code-server</a>. Find the binary file for linux and get the downloading address. <img src="../../public/img/code-server/code-server-download.png" alt="Download binary file" /></p>
+<p>Open this page on your client browser, find the latest release of <a href="https://github.com/codercom/code-server/releases" target="_blank">code-server</a>. Find the binary file for linux and get the downloading address. <img src="code-server/code-server-download.png" alt="Download binary file" /></p>
 
 <p>Then in the terminal which connects to the remote server, type:</p>
 
@@ -397,7 +397,7 @@ Then type:</p>
 <p>where &ndash;region refers to your region. There are four region options: us(Ohio), eu(Frankfurt), ap(Singapore), au(Sydney). If you don&rsquo;t select a region, the default one is us, which might be slow if you are in Asia.</p>
 
 <p>Then your screen will show something like this:
-<img src="../../public/img/code-server/ngrok.png" alt="ngrok" /></p>
+<img src="code-server/ngrok.png" alt="ngrok" /></p>
 
 <p>There is a number after <code>0.tcp.ngrok.io:</code> <strong>15707</strong>. You need to remember this port number. Please keep this window on if you want to keep this tunnel open.</p>
 
