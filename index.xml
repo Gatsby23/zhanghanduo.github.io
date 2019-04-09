@@ -35,7 +35,7 @@
 
 &lt;h2 id=&#34;step-2-download-code-server&#34;&gt;Step 2. Download code-server&lt;/h2&gt;
 
-&lt;p&gt;Open this page on your client browser, find the latest release of &lt;a href=&#34;https://github.com/codercom/code-server/releases&#34; target=&#34;_blank&#34;&gt;code-server&lt;/a&gt;. Find the binary file for linux and get the downloading address. &lt;img src=&#34;code-server/code-server-download.png&#34; alt=&#34;Download binary file&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Open this page on your client browser, find the latest release of &lt;a href=&#34;https://github.com/codercom/code-server/releases&#34; target=&#34;_blank&#34;&gt;code-server&lt;/a&gt;. Find the binary file for linux and get the downloading address. &lt;img src=&#34;../../public/img/code-server/code-server-download.png&#34; alt=&#34;Download binary file&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Then in the terminal which connects to the remote server, type:&lt;/p&gt;
 
@@ -67,7 +67,7 @@ Then type:&lt;/p&gt;
 &lt;p&gt;where &amp;ndash;region refers to your region. There are four region options: us(Ohio), eu(Frankfurt), ap(Singapore), au(Sydney). If you don&amp;rsquo;t select a region, the default one is us, which might be slow if you are in Asia.&lt;/p&gt;
 
 &lt;p&gt;Then your screen will show something like this:
-&lt;img src=&#34;code-server/ngrok.png&#34; alt=&#34;ngrok&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;../../public/img/code-server/ngrok.png&#34; alt=&#34;ngrok&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;There is a number after &lt;code&gt;0.tcp.ngrok.io:&lt;/code&gt; &lt;strong&gt;15707&lt;/strong&gt;. You need to remember this port number. Please keep this window on if you want to keep this tunnel open.&lt;/p&gt;
 
