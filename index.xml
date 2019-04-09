@@ -11,6 +11,76 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>How to remotely edit your project without having to use VIM</title>
+      <link>https://zhanghanduo.github.io/post/remote_edit/</link>
+      <pubDate>Tue, 09 Apr 2019 15:20:37 +0800</pubDate>
+      
+      <guid>https://zhanghanduo.github.io/post/remote_edit/</guid>
+      <description>
+
+&lt;p&gt;I recently found an hot github repository called &lt;a href=&#34;https://github.com/codercom/code-server&#34; target=&#34;_blank&#34;&gt;code-server&lt;/a&gt; which is able to run &lt;strong&gt;VS Code&lt;/strong&gt; on a remote server, accessible through the browser. So it suddenly came to me an idea to remotely edit any code for free as long as you have a linux environment with Internet. Here I will introduce you how to remotely edit and run without the need of Teamviewer, Anydesk, or VcXsrv, etc.&lt;/p&gt;
+
+&lt;p&gt;In this article I call the computer you are frequently on (or on the go) &lt;em&gt;client&lt;/em&gt;, and the solely working computer or workstation &lt;em&gt;server&lt;/em&gt;. Let&amp;rsquo;s consider you understand the basic knowledge of SSH key as you are going to use it. For tutorial about how to generate SSH keys, please refer to &lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2&#34; target=&#34;_blank&#34;&gt;How to set up SSH keys&lt;/a&gt; and &lt;a href=&#34;https://help.github.com/en/articles/connecting-to-github-with-ssh&#34; target=&#34;_blank&#34;&gt;connecting to GitHub with SSH&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Firstly you need to see whether your server has a public IP address. If yes (this is not common), then things are really easy and you can just follow step 1 and 2; otherwise, go to step 0, then 1, 2.&lt;/p&gt;
+
+&lt;h2 id=&#34;step-1-ssh-connect&#34;&gt;Step 1. SSH connect&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;ssh server_username@IP_address -L 8843:localhost:8843
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;-L 8843:localhost:8843&lt;/code&gt; here is &lt;strong&gt;local port forwarding&lt;/strong&gt; which allows you to access local network resources that aren&amp;rsquo;t exposed to the Internet. The first 8843 is local port, &lt;code&gt;localhost:8843&lt;/code&gt; is the remote &lt;strong&gt;code-server&lt;/strong&gt; default port.&lt;/p&gt;
+
+&lt;p&gt;To see whether you can successfully links to the server. The prerequisites are 1) you installed openssh-client 2) you have generated SSH key. If not successfully, maybe you don&amp;rsquo;t have a public IP address. Then go to step 0.&lt;/p&gt;
+
+&lt;h2 id=&#34;step-2-download-code-server&#34;&gt;Step 2. Download code-server&lt;/h2&gt;
+
+&lt;p&gt;Open this page on your client browser, find the latest release of &lt;a href=&#34;https://github.com/codercom/code-server/releases&#34; target=&#34;_blank&#34;&gt;code-server&lt;/a&gt;. Find the binary file for linux and get the downloading address. &lt;img src=&#34;code-server/code-server-download.png&#34; alt=&#34;Download binary file&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Then in the terminal which connects to the remote server, type:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;wget code-server_downloading_address
+# Example:
+wget https://github.com/codercom/code-server/releases/download/1.696-vsc1.33.0/code-server1.696-vsc1.33.0-linux-x64.tar.gz
+tar -xvzf code-server1.696-vsc1.33.0-linux-x64.tar.gz
+cd code-server1.696-vsc1.33.0-linux-x64/
+sudo cp code-server /usr/local/bin/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then your &lt;strong&gt;code-server&lt;/strong&gt; has been successfully installed!&lt;/p&gt;
+
+&lt;h2 id=&#34;step-3-running-code-server&#34;&gt;Step 3. Running code-server&lt;/h2&gt;
+
+&lt;p&gt;Go to the folder of your code waiting to be edited and type &lt;code&gt;code-server&lt;/code&gt; in the terminal connected to remote server.
+Then open your browser and type &lt;code&gt;localhost:8843&lt;/code&gt;, your workspace of VSCode will be revealed to you!&lt;/p&gt;
+
+&lt;h2 id=&#34;step-0-ngrok&#34;&gt;Step 0. Ngrok&lt;/h2&gt;
+
+&lt;p&gt;Some people will use VPS servers or cloud hosting providers like &lt;a href=&#34;www.vultr.com&#34; target=&#34;_blank&#34;&gt;Vultr&lt;/a&gt;, AWS and so on to pay for a public IP address. But here we just need &lt;a href=&#34;www.ngrok.com&#34; target=&#34;_blank&#34;&gt;Ngrok&lt;/a&gt;, a great tool that can create a tunnel from the public Internet to a port on your local machine. You can give this URL to anyone and any place without the need to pay any money!&lt;/p&gt;
+
+&lt;p&gt;Download ngrok onto your remote server and throw the binary file into /usr/local/bin/. Maybe need to &lt;code&gt;sudo chmod a+x ngrok&lt;/code&gt;.
+Then type:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ngrok tcp 22 --region ap
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;where &amp;ndash;region refers to your region. There are four region options: us(Ohio), eu(Frankfurt), ap(Singapore), au(Sydney). If you don&amp;rsquo;t select a region, the default one is us, which might be slow if you are in Asia.&lt;/p&gt;
+
+&lt;p&gt;Then your screen will show something like this:
+&lt;img src=&#34;code-server/ngrok.png&#34; alt=&#34;ngrok&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There is a number after &lt;code&gt;0.tcp.ngrok.io:&lt;/code&gt; &lt;strong&gt;15707&lt;/strong&gt;. You need to remember this port number. Please keep this window on if you want to keep this tunnel open.&lt;/p&gt;
+
+&lt;p&gt;Then you can ssh to your remote server by copying the command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ssh hd@0.tcp.ngrok.io -p15707 -L 8443:localhost:8443
+#Or your region is ap
+ssh hd@0.tcp.ap.ngrok.io -p15707 -L 8443:localhost:8443
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>GMC: Grid Based Motion Clustering in Dynamic Environment</title>
       <link>https://zhanghanduo.github.io/publication/gmc/</link>
       <pubDate>Thu, 07 Mar 2019 17:12:30 +0800</pubDate>
